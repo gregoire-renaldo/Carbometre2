@@ -1,3 +1,4 @@
 class Item < ApplicationRecord
-  has_many :footprints has_many :footprints, through: :lists
+  has_many :lists
+  has_many :footprints, through: :lists
 end
