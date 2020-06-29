@@ -6,7 +6,7 @@
 <p><%= @item.category %></p>
 <p><%= @item.charge %></p>
 
-<%= link_to('edit', items_edit_path) %>
+<%= link_to('edit', edit_item_path) %>
 <%= link_to "Delete #{@item.name}",
             item_path(@item),
             method: :delete,
