@@ -2,4 +2,8 @@
 <p>Find me in app/views/footprints/show.html.erb</p>
 
 <p><%= @footprint.name %></p>
+<%= link_to "Delete #{@footprint.name}",
+            footprint_path(@footprint),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
 

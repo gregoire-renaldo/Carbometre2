@@ -28,11 +28,22 @@ class FootprintsController < ApplicationController
   end
 
   def destroy
+    find_footprint
+    if @footprint.user_id == current_user.id
+      @footprint.destroy
+      redirect_to footprints_path
+    else
+      render :edit
+    end
   end
 
   private
 
   def footprint_params
     params.require(:footprint).permit(:name)
+  end
+
+  def find_footprint
+    @footprint = Footprint.find(params[:id])
   end
 end
