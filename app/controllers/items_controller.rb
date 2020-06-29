@@ -18,12 +18,23 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+
+    # no need for app/views/items/update.html.erb
+    redirect_to item_path(@item)
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+
+    # no need for app/views/items/update.html.erb
+    redirect_to items_path(@item)
   end
 
   private
