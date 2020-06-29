@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def new
+    @footprint = Footprint.find(params[:footprint_id])
   end
 
   def create

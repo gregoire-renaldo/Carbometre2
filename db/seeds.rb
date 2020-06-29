@@ -24,6 +24,7 @@ puts 'Finished!'
 puts 'Creating 20 fake footprints...'
 40.times do
   footprint = Footprint.new(
+    name: Faker::Name.name,
     user_id: rand(1..20)
   )
   footprint.save!
