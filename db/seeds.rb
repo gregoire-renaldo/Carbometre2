@@ -11,7 +11,7 @@ Footprint.destroy_all
 
 
 puts 'Creating 20 fake users...'
-list = (0..21).to_a
+list = (0..20).to_a
 list.each do |num|
     user = User.new(
       email:"#{num}@gmail.com",
@@ -33,6 +33,7 @@ puts 'Finished!'
 puts 'creating 20 items'
 20.times do
   item = Item.new(
+    name: Faker::Games::Pokemon.name,
     category: Faker::Subscription.plan,
     charge: rand(0.10..10.32)
   )
