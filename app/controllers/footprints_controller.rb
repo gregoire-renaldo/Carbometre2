@@ -4,7 +4,7 @@ class FootprintsController < ApplicationController
   end
 
   def show
-    @footprint = Footprint.find(params[:id])
+    find_footprint
   end
 
   def new
