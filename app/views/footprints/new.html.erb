@@ -1,0 +1,16 @@
+<h1>Footprints#new</h1>
+<p>Find me in app/views/footprints/new.html.erb</p>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Create a new footprint</h1>
+
+      <%= form_for(@footprint) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
